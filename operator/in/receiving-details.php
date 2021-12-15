@@ -75,7 +75,7 @@ while($data = mysqli_fetch_array($sql)){
                 <div class="sidebar_user_info">
                     <div class="icon_setting"></div>
                     <div class="user_profle_side">
-                        <div class="user_img"><img class="img-responsive" src="../../operator/images/logo/donii.jpeg" alt="#" /></div>
+                        <div class="user_img"><img class="img-responsive" src="../../operator/images/logo/user.png" alt="#" /></div>
                         <div class="user_info">
                             <h6><?=$_SESSION['nama']?></h6>
                             <p><span class="online_animation"></span> Online</p>
@@ -127,7 +127,7 @@ while($data = mysqli_fetch_array($sql)){
                               </ul>
                               <ul class="user_profile_dd">
                                  <li>
-                                       <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/donii.jpeg" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
+                                       <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/user.png" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
                                        <div class="dropdown-menu">
                                           <a class="dropdown-item" href="../profileop.php">My Profile</a>
                                           <a class="dropdown-item" href="../settingsop.php">Settings</a>
