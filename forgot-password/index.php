@@ -227,5 +227,10 @@
                     </div>
                 </div>
             </section>
+            <div class="mx-5 py-3">
+                <button class="btn btn-primary btn-lg rounded" onclick="location.href='/tubespw/pages/login.php'">
+                    Go Back
+                </button>
+            </div>
     </body>
 </html>
