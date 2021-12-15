@@ -10,7 +10,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-   <head>
+<head>
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@ session_start();
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Dashboard Operator</title>
+      <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -27,7 +27,6 @@ session_start();
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- CSS only -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
       <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
       <!-- site css -->
       <link rel="stylesheet" href="style.css" />
@@ -41,18 +40,18 @@ session_start();
       <link rel="stylesheet" href="css/perfect-scrollbar.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
-      <link rel="stylesheet" href="css/btn.css" />
-      <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
-      <!-- Script ChartJS -->
-      <script src="js/chart.js"></script>
-      <!-- Calendar -->
-      <link href="css/fullcalendar.css" rel="stylesheet" />
-      <script src="js/fullcalendar.js"></script>
-      <!-- Teks Animasi -->
-      <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/styleAnimasi.css">
+      <!-- Google font -->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+      <!-- Bootstrap -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- Custom stlylesheet -->
+      <link type="text/css" rel="stylesheet" href="css/insert.css" />
+      <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  <![endif]-->
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
