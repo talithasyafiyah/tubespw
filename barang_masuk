@@ -1,0 +1,66 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 28, 2021 at 04:34 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `tubes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang_masuk`
+--
+
+CREATE TABLE `barang_masuk` (
+  `ID_masuk` int(255) NOT NULL,
+  `ID_barang` int(255) NOT NULL,
+  `Tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Nama_barang` varchar(200) NOT NULL,
+  `Supplier` varchar(200) NOT NULL,
+  `Quantity` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang_masuk`
+--
+
+INSERT INTO `barang_masuk` (`ID_masuk`, `ID_barang`, `Tanggal`, `Nama_barang`, `Supplier`, `Quantity`) VALUES
+(1, 101, '2021-11-27 16:35:21', ' minyak goreng bimoli', 'PT Salim Ivomas Pratama Tbk', 30),
+(2, 102, '2021-11-27 16:35:21', 'minyak goreng sanco', 'PT MIKIE OLEO NABATI', 20),
+(3, 103, '2021-11-27 16:39:55', 'minyak goreng sania', 'PT PUTRA MAS DUA SAUDARA', 15),
+(4, 104, '2021-11-27 16:39:55', 'minyak goreng filma ', 'PT SINAR MAS AGRO', 20),
+(5, 105, '2021-11-28 03:25:46', 'minyak goreng fortune', 'PT PUTRA MAS DUA SAUDARA', 30),
+(6, 106, '2021-11-28 03:25:46', 'minyak goreng tropical', 'PT. Bina Karya Prima', 35),
+(7, 201, '2021-11-28 03:32:08', 'tepung terigu segitiga biru', 'PT Indofood Sukses Makmur Tbk', 50),
+(8, 202, '2021-11-28 03:32:08', 'tepung terigu cakra kembar', 'PT Indofood Sukses Makmur Tbk', 40);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `barang_masuk`
+--
+ALTER TABLE `barang_masuk`
+  ADD PRIMARY KEY (`ID_masuk`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

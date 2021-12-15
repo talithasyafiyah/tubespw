@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+.text {
+  font-family: 'Carter One', cursive;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+@media (min-width: 576px) {
+  h5 {
+    font-size: 65px;
+  }
+}
+
+.word {
+  position: absolute;
+  width: 800px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+  color: #b016f1;
+}
+
+.belize {
+  color: #0095f8;
+}
+
+.pomegranate {
+  color: #ff1900;
+}
+
+.green {
+  color: #ff008c;
+}
+
+.midnight {
+  color: #ff7300;
+}
