@@ -3407,3 +3407,34 @@ table.projects tr td:first-child {
     height: 100%;
     min-height: 720px;
 }
+
+#notification:hover
+{
+    color: #fff;
+    background-color: #15283c;
+    transition: .7s;
+}
+
+#notification:hover .fa-edit
+{
+    color: #fff;
+    transition: .7s;
+}
+
+#notification:hover .fa-plus-square
+{
+    color: #fff;
+    transition: .7s;
+}
+
+#notification:hover .fa-empty-set
+{
+    color: #fff;
+    transition: .7s;
+}
+
+#notification:hover span
+{
+    color: #fff;
+    transition: .7s;
+}

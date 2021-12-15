@@ -80,7 +80,7 @@
 									</label>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#">Forgot Password</a>
+									<a href="http://localhost/tubespw/forgot-password/">Forgot Password</a>
 								</div>
 		            		</div>
 		          		</form>

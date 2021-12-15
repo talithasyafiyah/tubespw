@@ -1,3 +1,6 @@
+<?php 
+    date_default_timezone_set("Asia/Jakarta"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <!-- site metas -->
-        <title>Outgoing Product</title>
+        <title><?php echo $TITLE; ?></title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -18,9 +21,11 @@
         <link rel="stylesheet" href="../../operator/css/all.css" />
         <!-- bootstrap css -->
         <link rel="stylesheet" href="../../operator/css/bootstrap.min.css" />
-        <!-- CSS only -->
+        <!-- CSS Datatable -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
         <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
+        <!-- CSS Select Option -->
+        <link href="../../operator/css/select2.css" rel="stylesheet" /> 
         <!-- site css -->
         <link rel="stylesheet" href="../../operator/css/style.css" />
         <!-- responsive css -->
@@ -35,6 +40,8 @@
         <link rel="stylesheet" href="../../operator/css/custom.css" />
         <!-- calendar file css -->
         <link rel="stylesheet" href="../../operator/css/semantic.min.css" />
+        <!-- ckeditor -->
+        
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -81,6 +88,12 @@
             </div>
         </nav>
         <!-- END OF SIDEBAR -->
+        <?php
+            $SELECT_TABLE = "SELECT * FROM `notification`";
+            $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
+
+            $NUM_ROWS = mysqli_num_rows($SELECT_TABLE_QUERY);
+        ?>
         <!-- HEADER -->
         <div id="content">
         <div class="topbar">
@@ -93,7 +106,61 @@
                     <div class="right_topbar">
                         <div class="icon_info">
                             <ul>
-                                <li><a href="#"><i class="fa fa-bell"></i><span class="badge">2</span></a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="" href="#" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-bell"></i>
+                                        <?php
+                                            if($SELECT_TABLE_QUERY -> num_rows > 0)
+                                            {
+                                                echo "<span class='badge'>$NUM_ROWS</span>";
+                                            }
+                                        ?>
+                                    </a>
+                                    <div class="dropdown-menu" style="width: 350px; left: -275px; top: 35px; background-clip: none; border: none; background-color: #214162" aria-labelledby="dropdownNotification">
+                                        <?php
+                                            
+                                            if($SELECT_TABLE_QUERY -> num_rows > 0)
+                                            {
+                                                foreach($SELECT_TABLE_QUERY as $NOTIFICATION)
+                                                {
+                                                    if($NOTIFICATION['type'] == "add")
+                                                    {
+                                                        echo "<div class='row g-0 py-2 px-0 mx-0' id='notification' style='cursor: pointer' onclick=\"location.href='add-outgoing.php?session_id=$NOTIFICATION[link]'\">";
+                                                        echo "  <div class='col-3 d-inline-block text-center text-info align-self-center align-middle px-1'><i class='far fa-plus-square fa-lg fa-2x align-middle'></i></div>";
+                                                        echo "      <div class='col-9 d-inline-block text-left align-self-center align-middle px-1' style='line-height: 13px'>";
+                                                        echo "          <div class='card-title text-info font-weight-bold'><span>ADD OUTGOING</span></div>";
+                                                        echo "          <div class='card-body text-info p-0'><span>Seems like you have unfinished work in this session.</span></div>";
+                                                        echo "          <div class='small text-right text-info'><span>$NOTIFICATION[time]</span></div>";
+                                                        echo "      </div>";
+                                                        echo "</div>";
+                                                        echo "<div class='dropdown-divider'></div>";
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<div class='row g-0 py-2 px-0 mx-0' id='notification' style='cursor: pointer' onclick=\"location.href='edit-outgoing.php?id=$NOTIFICATION[user_id]&session_id=$NOTIFICATION[link]'\">";
+                                                        echo "  <div class='col-3 d-inline-block text-center text-info align-self-center align-middle px-1'><i class='fad fa-edit fa-lg fa-2x align-middle'></i></div>";
+                                                        echo "      <div class='col-9 d-inline-block text-left align-self-center align-middle px-1' style='line-height: 13px'>";
+                                                        echo "          <div class='card-title text-info font-weight-bold'><span>EDIT OUTGOING</span></div>";
+                                                        echo "          <div class='card-body p-0 text-info'><span>Seems like you have unfinished work in this session.</span></div>";
+                                                        echo "          <div class='small text-right text-info'><span>$NOTIFICATION[time]</span></div>";
+                                                        echo "      </div>";
+                                                        echo "</div>";
+                                                        echo "<div class='dropdown-divider'></div>"; 
+                                                    }                                                   
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo "<div class='row g-0' id='notification' style='cursor: pointer'>";
+                                                echo "  <div class='col-3 d-inline-block text-center text-info align-self-center align-middle px-1'><i class='far fa-empty-set fa-lg fa-2x align-middle'></i></div>";
+                                                echo "      <div class='col-9 d-inline-block text-left align-self-center align-middle px-1' style='line-height: 13px'>";
+                                                echo "          <div class='card-body p-0 text-info align-self-center'><span>You have no new notifications.</span></div>";
+                                                echo "      </div>";
+                                                echo "</div>";
+                                            }                                   
+                                        ?> 
+                                    </div>   
+                                </li>
                                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
                                 <li><a href="#"><i class="fa fa-envelope"></i><span class="badge">3</span></a></li>
                             </ul>
