@@ -112,10 +112,10 @@
                                                             <td class='text-center align-center'>
                                                                <input type='hidden' name='id' value=" . $ROW['user_id'] . "> 
                                                                <button type='submit' name='details' title='Details' class='btn btn-outline-info'>
-                                                                  <span class='fad fa-folder-open fa-lg'></span>
+                                                                  <span class='fad fa-folder-open fa-md'></span>
                                                                </button>
                                                                <button type='submit' name='delete' title='Delete' class='btn btn-outline-danger' onclick=\"return confirm('Are you sure want to delete this record?')\";>
-                                                                  <span class='fad fa-trash fa-lg'></span>
+                                                                  <span class='fad fa-trash fa-md'></span>
                                                                </button>
                                                          </form
                                                             </td>

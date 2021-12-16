@@ -375,17 +375,17 @@
                                     ?>                                                
                                 </tbody>
                                 </table>       
-                                <button type="submit" name="save" id="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all" style="width: 66.74px">
+                                <button type="submit" name="save" id="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all w-auto" style="width: 66.74px">
                                     <span class="far fa-save fa-md"></span> 
                                     <span >&nbsp Save</span>
                                 </button>
                                 <div class="text-right float-right">
-                                <button type="submit" name="delete_record" class="btn btn-danger mb-2 px-2 py-2 rounded" style="width: 144.54px" onclick="return confirm('Are you sure want to delete selected item(s)?');">
+                                <button type="submit" name="delete_record" class="btn btn-danger mb-2 px-2 py-2 rounded w-auto" style="width: 144.54px" onclick="return confirm('Are you sure want to delete selected item(s)?');">
                                     <span class="far fa-trash fa-lg"></span> &nbsp 
                                     <span id="delete-lable">Delete Selected</span>
                                 </button>
                                 </div>
-                                <button type="submit" name="cancel" class="btn btn-secondary mb-2 px-2 py-2 rounded toggle-all" style="width: 66.74px" onclick="return confirm('Are you sure want to cancel? Any changes you made will not be saved!')">
+                                <button type="submit" name="cancel" class="btn btn-secondary mb-2 px-2 py-2 rounded toggle-all w-auto" style="width: 66.74px" onclick="return confirm('Are you sure want to cancel? Any changes you made will not be saved!')">
                                     <span class="far fa-arrow-left fa-md"></span>
                                     <span >&nbsp Back</span>
                                 </button>
