@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 06:50 PM
+-- Generation Time: Dec 15, 2021 at 02:30 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `data_produk` (
   `no` int(10) NOT NULL,
   `id_barang` int(10) NOT NULL,
-  `product` varchar(200) NOT NULL,
+  `produk` varchar(200) NOT NULL,
   `kategori` varchar(100) NOT NULL,
   `perusahaan` varchar(200) NOT NULL,
   `stok` int(10) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `data_produk` (
 -- Dumping data for table `data_produk`
 --
 
-INSERT INTO `data_produk` (`no`, `id_barang`, `product`, `kategori`, `perusahaan`, `stok`, `harga`, `gambar`) VALUES
+INSERT INTO `data_produk` (`no`, `id_barang`, `produk`, `kategori`, `perusahaan`, `stok`, `harga`, `gambar`) VALUES
 (1, 101, 'Bimoli', 'Minyak Goreng', 'PT. Salim Ivomas Pratama Tbk', 15, 'Rp 36.000', 'bimoli.jpg'),
 (2, 102, 'Sanco', 'Minyak Goreng', 'PT. Mikie Oleo Nabati', 20, 'Rp 39.000', 'sunco.jpg'),
 (3, 103, 'Sania', 'Minyak Goreng', 'PT. Putra Mas Dua Saudara', 10, 'Rp 37.000', 'sania.jpg'),
@@ -131,7 +131,7 @@ ALTER TABLE `data_produk`
 -- AUTO_INCREMENT for table `data_produk`
 --
 ALTER TABLE `data_produk`
-  MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
