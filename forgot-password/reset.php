@@ -12,7 +12,7 @@
     $EMAIL_CHECK = $_GET['email'];
     $TOKEN_CHECK = $_GET['token'];
 
-    $CHECK = "SELECT * FROM password_reset WHERE email ='$EMAIL_CHECK' AND session_token = '$TOKEN_CHECK'";
+    $CHECK = "SELECT * FROM user WHERE email ='$EMAIL_CHECK' AND session_token = '$TOKEN_CHECK'";
     $CHECK_QUERY = mysqli_query($CONN, $CHECK);
 
     if(mysqli_num_rows($CHECK_QUERY) > 0)
@@ -47,7 +47,7 @@
         $NEW_PASSWORD_CONFIRMATION = mysqli_real_escape_string($CONN, $_POST['new-password-confirmation']);
         $STATUS = array();
 
-        $EC = "SELECT * FROM password_reset WHERE email = '$EMAIL' ";
+        $EC = "SELECT * FROM user WHERE email = '$EMAIL' ";
         $EC_QUERY = mysqli_query($CONN, $EC);
 
         if(mysqli_num_rows($EC_QUERY) > 0)
@@ -69,18 +69,18 @@
                 
                 if($CUR_DATE > $EXP_DATE === false)
                 {
-                    $CONFIRMATION = "UPDATE password_reset SET password = '$HASHED_PASSWORD' WHERE email = '$EMAIL'";
+                    $CONFIRMATION = "UPDATE user SET password = '$HASHED_PASSWORD' WHERE email = '$EMAIL'";
                     $CONFIRMATION_QUERY = mysqli_query($CONN, $CONFIRMATION);
 
                     if($CONFIRMATION_QUERY)
                     {
-                        $DELETE_TOKEN  = "UPDATE password_reset SET session_token = '', token_expiration = '' WHERE email ='$EMAIL'";
+                        $DELETE_TOKEN  = "UPDATE user SET session_token = '', token_expiration = '' WHERE email ='$EMAIL'";
                         $DELETE_TOKEN_QUERY = mysqli_query($CONN, $DELETE_TOKEN);
 
                         if($DELETE_TOKEN_QUERY)
                         {
                             $STATUS['success'] = "Your password has successfully changed";
-                            header("refresh:2; url=forgot.php");
+                            header("refresh:2; url=http://localhost/tubespw/pages/login.php");
                         }
                     }
                     else

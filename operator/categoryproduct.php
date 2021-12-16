@@ -216,7 +216,7 @@ session_start();
                                                    </div>
                                                    <div class="form-group">
                                                    <label for="description" class="col-form-label">Kategori :</label>
-                                                   <input type="text" name="description" value="<?=$kategori;?>" class="form-control" required>
+                                                   <input type="text" name="kategori" value="<?=$kategori;?>" class="form-control" required>
                                                    </div>
                                                    <div class="modal-footer"> 
                                                       <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -259,10 +259,10 @@ session_start();
                                         include'../includes/koneksi.php';
                                         if (isset($_POST['btnupdate'])){
                                             $id = $_POST['id_barang'];
-                                            $description = $_POST['description'];
+                                            $kategori = $_POST['kategori'];
                                             
                                             if ($koneksi){
-                                             $update = "UPDATE data_produk SET kategori='$kategori' WHERE id_barang=$id";
+                                             $update = "UPDATE data_produk SET kategori='$kategori' WHERE id_barang='$id'";
                                              mysqli_query($koneksi,$update);
                                              echo "<script>setTimeout(\"location.href = 'categoryproduct.php';\",1500);</script>";
                                     

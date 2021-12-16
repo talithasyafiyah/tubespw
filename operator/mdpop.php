@@ -307,7 +307,7 @@ session_start();
                                       <!-- Delete Modal -->
                                       <div class="modal fade" id="delete<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png');">
+                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png'); background-color: white;">
                                                 <div class="modal-header">
                                                    <h5 class="modal-title">Hapus Barang ?</h5>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">

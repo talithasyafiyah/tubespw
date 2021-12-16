@@ -65,7 +65,7 @@
         $mail->isHTML(true);
         $mail->Subject = "Reset Password Notification";
 
-        $mail_template = file_get_contents('C:\xampp\htdocs\forgot-password\email-template.html');
+        $mail_template = file_get_contents('C:\xampp\htdocs\tubespw\forgot-password\email-template.html');
         $mail_template = str_replace('{{USERNAME}}', $USER_NAME, $mail_template);
         $mail_template = str_replace("{{USEREMAIL}}", $USER_EMAIL, $mail_template);
         $mail_template = str_replace("{{TOKEN}}", $TOKEN, $mail_template);
@@ -80,7 +80,7 @@
         $TOKEN = md5(rand());
         $STATUS = array();
 
-        $EC = "SELECT * FROM password_reset WHERE email = '$EMAIL' ";
+        $EC = "SELECT * FROM user WHERE email = '$EMAIL' ";
         $EC_QUERY = mysqli_query($CONN, $EC);
 
         if(mysqli_num_rows($EC_QUERY) > 0)
@@ -89,7 +89,7 @@
             $USER_NAME = isset($ROW['username']) ? $ROW['username'] : '';
             $USER_EMAIL = isset($ROW['email']) ? $ROW['email'] : '';
 
-            $UST = "UPDATE password_reset SET session_token = '$TOKEN' WHERE email = '$USER_EMAIL'";
+            $UST = "UPDATE user SET session_token = '$TOKEN' WHERE email = '$USER_EMAIL'";
             $UST_QUERY = mysqli_query($CONN, $UST);
 
             if($UST_QUERY)
@@ -102,7 +102,7 @@
                 date_default_timezone_set("Asia/Jakarta");
                 $LIMIT = date('F j, Y, G:i A', strtotime('+1 hour'));
                 
-                $UTL = "UPDATE password_reset SET token_expiration = '$LIMIT' WHERE email = '$USER_EMAIL'";
+                $UTL = "UPDATE user SET token_expiration = '$LIMIT' WHERE email = '$USER_EMAIL'";
                 $UTL_QUERY = mysqli_query($CONN, $UTL); 
 
                 header("refresh:2; url=mail-sent.php"); 
