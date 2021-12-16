@@ -134,7 +134,6 @@ $row = mysqli_fetch_array($query);
                                     <div class="dropdown-menu">
                                        <a class="dropdown-item" href="profileop.php">My Profile</a>
                                        <a class="dropdown-item" href="settingsop.php">Settings</a>
-                                       <a class="dropdown-item" href="help.php">Help</a>
                                        <a class="dropdown-item" href="../pages/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
@@ -158,7 +157,7 @@ $row = mysqli_fetch_array($query);
                      <!-- row -->
                      <div class="row column4 graph">
                         <div class="col-md-12">
-                           <div class="white_shd full margin_bottom_30">
+                           <div class="white_shd full margin_bottom_30" style="background-image: url('images/layout_img/pattern_h.png');">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
                                     <h2>Manage Account &nbsp

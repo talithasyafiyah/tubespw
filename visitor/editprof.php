@@ -89,7 +89,7 @@ $row = mysqli_fetch_array($query);
                      <li class="active">
                         <a href="dashboardvis.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
-                     <li><a href="mdpop.php"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
+                     <li><a href="mdpvis.php"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
                      <li><a href="testimoni.php"><i class="fa fa-comments-o red_color"></i> <span>Testimoni</span></a></li>
                      <li><a href="commentVisitor.php"><i class="fa fa-thumbs-o-up green_color"></i> <span>Comment</span></a></li>
                   </ul>
@@ -143,7 +143,7 @@ $row = mysqli_fetch_array($query);
                      <!-- row -->
                      <div class="row column1">
                         <div class="col-lg-12">
-                           <div class="white_shd full margin_bottom_30">
+                           <div class="white_shd full margin_bottom_30" style="background-image: url('images/layout_img/pattern_h.png');">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
                               </div>

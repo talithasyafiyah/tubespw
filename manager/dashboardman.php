@@ -117,7 +117,6 @@ include "../includes/koneksi.php";
                                     <div class="dropdown-menu">
                                        <a class="dropdown-item" href="profileman.php">My Profile</a>
                                        <a class="dropdown-item" href="settingsman.php">Settings</a>
-                                       <a class="dropdown-item" href="#">Help</a>
                                        <a class="dropdown-item" href="../pages/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>

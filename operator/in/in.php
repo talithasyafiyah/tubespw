@@ -80,80 +80,85 @@ session_start();
             <div class="sidebar_blog_2">
                 <h4>General</h4>
                 <ul class="list-unstyled components">
-                    <li><a href="../dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
-                    <li>
+                     <li><a href="dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                     <li>
                         <a href="#dataproduct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes purple_color"></i> <span>Data Product</span></a>
                         <ul class="collapse list-unstyled" id="dataproduct">
-                            <li><a href="../categoryproduct.php">> <span>Category Product</span></a></li>
-                            <li><a href="../brandproduct.php">> <span>Brand Product</span></a></li>
+                           <li><a href="../categoryproduct.php">> <span>Category Product</span></a></li>
+                           <li><a href="../companyproduct.php">> <span>Company Product</span></a></li>
                         </ul>
-                    </li>
-                    <li><a href="../mdpop.php"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
-                    <li><a href="../in.php"><i class="fa fa-shopping-cart blue1_color"></i> <span>Incoming Product</span></a></li>
-                    <li><a href="../out.php"><i class="fa fa-truck red_color"></i> <span>Outgoing Product</span></a></li>
-                    <li><a href="../reportop.php"><i class="fa fa-print green_color"></i> <span>Report</span></a></li>
-                </ul>
+                     </li>
+                     <li><a href="../mdpop.php"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
+                     <li><a href="in.php"><i class="fa fa-shopping-cart blue1_color"></i> <span>Incoming Product</span></a></li>
+                     <li><a href="../out/index.php"><i class="fa fa-truck red_color"></i> <span>Outgoing Product</span></a></li>
+                     <li>
+                        <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-print green_color"></i> <span>Report</span></a>
+                        <ul class="collapse list-unstyled" id="report">
+                           <li><a href="../reportmdp.php">> <span>Master Data Product</span></a></li>
+                           <li><a href="../reportin.php">> <span>Incoming Product</span></a></li>
+                           <li><a href="../reportout.php">> <span>Outgoing Product</span></a></li>
+                        </ul>
+                     </li>
+                  </ul>
             </div>
         </nav>
         <!-- END OF SIDEBAR -->
-        <!-- HEADER -->
-        <div id="content">
-        <div class="topbar">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="full">
-                    <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
-                    <div class="logo_section">
-                        <a href="operator.php"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
-                    </div>
-                    <div class="right_topbar">
-                        <div class="icon_info">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-bell"></i><span class="badge">2</span></a></li>
-                                <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i><span class="badge">3</span></a></li>
-                            </ul>
-                            <ul class="user_profile_dd">
-                                <li>
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/user.png" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="../profileop.php">My Profile</a>
-                                        <a class="dropdown-item" href="../settingsop.php">Settings</a>
-                                        <a class="dropdown-item" href="#">Help</a>
-                                        <a class="dropdown-item" href="../../pages/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+         <!-- HEADER -->
+         <div id="content">
+         <div class="topbar">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <div class="full">
+                     <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
+                     <div class="logo_section">
+                           <a href="operator.html"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
+                     </div>
+                     <div class="right_topbar">
+                           <div class="icon_info">
+                              <ul>
+                                 <li><a href="#"><i class="fa fa-bell"></i><span class="badge">2</span></a></li>
+                                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-envelope"></i><span class="badge">3</span></a></li>
+                              </ul>
+                              <ul class="user_profile_dd">
+                                 <li>
+                                       <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/user.png" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
+                                       <div class="dropdown-menu">
+                                          <a class="dropdown-item" href="../profileop.php">My Profile</a>
+                                          <a class="dropdown-item" href="../settingsop.php">Settings</a>
+                                          <a class="dropdown-item" href="../../pages/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                       </div>
+                                 </li>
+                              </ul>
+                           </div>
+                     </div>
+                  </div>
+               </nav>
+         </div>
         <!-- END OF HEADER -->
  <!-- dashboard inner -->
  <div class="midde_cont">
-    <div class="container-fluid">
-       <div class="row column_title">
-          <div class="col-md-12">
-             <div class="page_title">
-
-                <a type="button" class="btn btn-outline-warning btn-sm" href="incoming.php"><i class="fa fa-plus-circle orange_color"></i> Masukkan Barang </a></small>
-             </div>
-          </div>
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2>Data <small><i class="fa fa-angle-double-right"></i> Barang Masuk <i class="fa fa-angle-double-right"></i>
+                  <a type="button" class="btn btn-outline-warning btn-sm"  href="incoming.php"><i class="fa fa-plus-circle orange_color"></i> Add Barang </a></small>
+            </div>
+         </div>
        </div>
-
        <!-- row -->
        <div class="row column1">
           <div class="col-lg-12">
-             <div class="white_shd full margin_bottom_30">
+             <div class="white_shd full margin_bottom_30" style="background-image: url('../images/layout_img/pattern_h.png');">
                 <div class="full graph_head">
                    <div class="heading1 margin_0">
-                      <h2>BARANG MASUK</h2>
+                      <h2>Incomming Product</h2>
                    </div>
                 </div>
                 <div class="table_section padding_infor_info">
                    <div class="table">
 
-                      <table class="table" id="dataTable">
+                      <table class="table" id="dataTable" style="background-image: url('../images/layout_img/pattern_h.png');"> 
                          <thead>
                             <tr>
 

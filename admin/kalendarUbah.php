@@ -104,7 +104,6 @@ session_start();
                                         <div class="dropdown-menu">
                                         <a class="dropdown-item" href="profileop.html">My Profile</a>
                                         <a class="dropdown-item" href="settingsop.html">Settings</a>
-                                        <a class="dropdown-item" href="#">Help</a>
                                         <a class="dropdown-item" href="../pages/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                         </div>
                                     </li>
