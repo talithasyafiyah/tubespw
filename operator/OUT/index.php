@@ -5,8 +5,10 @@
                // SET PAGE TITLE
                $TITLE = "Outgoing Product";
 
-               // START SESSION
                session_start();
+               if(empty($_SESSION['level'])) {
+                  echo "<script>alert('Sorry, you are not allowed to access this page.'); document.location='../../pages/login.php'</script>";
+               }
 
                // REGENERATE NEW ID EACH TIME PAGE LOAD
                session_regenerate_id();
@@ -65,7 +67,7 @@
             </div>
             <div class="row column1">
                <div class="col-lg-12">
-                  <div class="white_shd full margin_bottom_30">
+                  <div class="white_shd full margin_bottom_30" style="background-image: url('../images/layout_img/pattern_h.png');">
                         <div class="full graph_head">
                            <div class="row">
                               <div class="col-lg-12 d-inline px-4">
@@ -75,7 +77,7 @@
                         </div>
                         <div class="table_section padding_infor_info">
                            <div class="table">
-                              <table class="table table-striped table-bordered table-hover" id="summary">
+                              <table class="table table-striped table-bordered table-hover" id="summary" style="background-image: url('../images/layout_img/pattern_h.png');">
                                     <thead class="thead-dark">
                                        <tr>
                                           <th class="text-left align-middle font-weight-bold">UID</th>

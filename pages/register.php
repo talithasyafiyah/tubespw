@@ -76,7 +76,7 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
-								<a href="tubespw/"><img src="images/logo.png" width="150"></a>
+								<a href="../index.php"><img src="images/logo.png" width="150"></a>
 								<h2>Welcome</h2>
 								<p>Already have an <b style="color: #ff6a3d;">account?</b></p>
 								<a href="login.php" class="btn btn-white btn-outline-white">Sign In</a>

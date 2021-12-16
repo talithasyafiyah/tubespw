@@ -12,7 +12,7 @@
   <meta content="" name="description">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="landingPage/img/logo.png">
+  <link rel="icon" href="LOGO 1.9.png" type="image/png" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -1051,7 +1051,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/donny.jpeg">
                             </div>
                             <div class="mc-description">
-                                Mas Komting Angkatan dan Komting Kelas Kom C sekaligus ketua Kelompok 7 Pemrograman Web
+                                Holaa, Perkenalkan nama saya Donny Adithya. Saya merupakan founder dari UD. SATU  7AN. Segala sesuatu yang berada disini merupakan tanggung jawab saya.
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -1081,7 +1081,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/talitha.jpg">
                             </div>
                             <div class="mc-description">
-                                Miss Universe Kom C
+                                Assalamualaikum semua, perkenalkan saya Talitha Syafiyah merupakan direktur utama UD. SATU 7AN. Segala laporan yang masuk akan disampaikan kepada saya terlebih dahulu.
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -1111,7 +1111,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/caesto.jpeg">
                             </div>
                             <div class="mc-description">
-                              Bang Caesto Pro dalam segala bidang
+                              Haii All, perkenalkan saya Caesto Marco Tampubolon selaku direktur bagian pengiriman di UD. SATU 7AN ini.
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -1141,7 +1141,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/erli.jpeg">
                             </div>
                             <div class="mc-description">
-                              Kak Erli Mahasiwa TI Kom C
+                              Horas ! Nama saya Erli Gurning, disini saya sebagai manager bagian ekspedisi di UD. SATU 7AN ini. Laporan saya akan diteruskan ke direktur bagian dari UD. SATU 7AN.
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -1171,7 +1171,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/febri.jpg">
                             </div>
                             <div class="mc-description">
-                              Nggak tau mau nulis apa
+                              Salam Sukses, nama saya Febri Zuladhari Bangun. Di UD. SATU 7AN ini saya menjabat sebagai manager bagian operator serta penghubung antar interaksi pengguna.
                             </div>
                         </div>
                         <a class="mc-btn-action">
@@ -1201,7 +1201,7 @@
                                 <img class="img-responsive" width="100%" src="landingPage/img/anggota/abrar.jpeg">
                             </div>
                             <div class="mc-description">
-                              Wakil Komting Kom C tercinta serta selalu aktif dalam kegiatan kampus
+                              Salam Toleransi ! Nama saya Rayhan Abrar Siregar. Saya menjabat sebagai manager bagian security di UD. SATU 7AN ini. Segala keamanan data menjadi tanggung jawab saya.
                             </div>
                         </div>
                         <a class="mc-btn-action">

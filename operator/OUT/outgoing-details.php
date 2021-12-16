@@ -4,9 +4,11 @@
 
                // SET PAGE TITLE
                $TITLE = "Outgoing Details";
-               
-               // START SESSION
-               session_start(); 
+
+               session_start();
+               if(empty($_SESSION['level'])) {
+                  echo "<script>alert('Sorry, you are not allowed to access this page.'); document.location='../../pages/login.php'</script>";
+               }
 
                // REGENERATE NEW ID EACH TIME PAGE LOAD
                session_regenerate_id();
@@ -66,7 +68,7 @@
 
             <div class="row column1">
                <div class="col-lg-12">
-                  <div class="white_shd full margin_bottom_30">
+                  <div class="white_shd full margin_bottom_30" style="background-image: url('../images/layout_img/pattern_h.png');">
                         <div class="full graph_head">
                            <div class="row">
                               <div class="col-lg-8 d-inline px-4">
@@ -78,7 +80,7 @@
                                  </h2>
                               </div>
                               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pr-4 align-self-center text-right">
-                                 <a href="print-report.php" class="btn btn-outline-primary py-2 px-2 rounded">
+                                 <a href="print-report.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-primary py-2 px-2 rounded">
                                     <i class="fad fa-print fa-lg"></i> 
                                     <span>&nbsp Print</span>
                                  </a>
@@ -124,7 +126,7 @@
                         </div>
                         <div class="table_section padding_infor_info">
                            <div class="table">
-                              <table class="table table-striped table-bordered" id="detailsTable">
+                              <table class="table table-striped table-bordered" id="detailsTable" style="background-image: url('../images/layout_img/pattern_h.png');">
                                  <thead class="thead-dark">
                                     <tr>
                                        <th class="text-left align-middle font-weight-bold">No.</th>

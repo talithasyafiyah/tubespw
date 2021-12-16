@@ -112,7 +112,7 @@ session_start();
                <div class="topbar">
                   <nav class="navbar navbar-expand-lg navbar-light">
                      <div class="full">
-                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height: 62px;"><i class="fa fa-bars"></i></button>
                         <div class="logo_section">
                            <a href="dashboardop.php"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
                         </div>
@@ -200,9 +200,9 @@ session_start();
                                       <!-- Update Modal -->
                                       <div class="modal fade" id="update<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png');">
+                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png'); background-color: #fff;">
                                                 <div class="modal-header">
-                                                   <h5 class="modal-title">Update Product</h5>
+                                                   <h4 class="modal-title">Update Product</h4>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                          <span aria-hidden="true">&times;</span>
                                                       </button>
@@ -230,9 +230,9 @@ session_start();
                                       <!-- Delete Modal -->
                                       <div class="modal fade" id="delete<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png');">
+                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png'); background-color: #fff;">
                                                 <div class="modal-header">
-                                                   <h5 class="modal-title">Hapus Barang ?</h5>
+                                                   <h4 class="modal-title">Hapus Barang ?</h4>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                          <span aria-hidden="true">&times;</span>
                                                       </button>

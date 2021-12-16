@@ -4,9 +4,11 @@
 
                // SET PAGE TITLE
                $TITLE = "Add Outgoing";
- 
-               // START SESSION
-               session_start(); 
+
+               session_start();
+               if(empty($_SESSION['level'])) {
+                  echo "<script>alert('Sorry, you are not allowed to access this page.'); document.location='../../pages/login.php'</script>";
+               }
 
                // CHECK SESSION ID EXISTENCE
                if(!isset($_SESSION['add_id']))
@@ -48,8 +50,7 @@
                      $DELETE_NOTIFICATION = "DELETE FROM `notification` WHERE link = '$_SESSION[add_id]'";
                      $DELETE_NOTIFICATION_QUERY = mysqli_query($koneksi, $DELETE_NOTIFICATION);
                      
-                     session_destroy();
-                     session_unset();
+                     unset($_SESSION['add_id']);
                      header("location: index.php");
                   }
                }
@@ -96,7 +97,7 @@
          </div>
          <div class="row column1">
             <div class="col-lg-12">
-               <div class="white_shd full margin_bottom_30 px-2">
+               <div class="white_shd full margin_bottom_30 px-2" style="background-image: url('../images/layout_img/pattern_h.png');">
                      <div class="row" style="width: 1008.22">
                         <div class="col-lg-5" style="width: 420.09px">
                            <table class="table table-bordered my-2">
@@ -310,9 +311,9 @@
                                        echo     "<td class='text-left align-middle'><input class='w-100' style='border: 0' type='text' value=$DATA[quantity] readonly></td>";
                                        echo     "<td class='text-left'>";
                                        echo           "<input type='hidden' name='date' value='".date('D, j M Y, H:i:s')."'>";
-                                       echo           "<input type='text' name='product_id[]' value=$DATA[product_id]>";
+                                       echo           "<input type='hidden' name='product_id[]' value=$DATA[product_id]>";
                                        echo           "<input type='hidden' name='product_name[]' value='".$DATA['product_name']."'>";
-                                       echo           "<input type='text' name='temp_quantity[]' value=$DATA[quantity]>";
+                                       echo           "<input type='hidden' name='temp_quantity[]' value=$DATA[quantity]>";
                                        echo           "<input type='checkbox' name='check_product[]' value=$DATA[session_id] class='form-check-input mx-0 my-0' style='right: 70.775px; width: 20px; height: 20px'>";
                                        echo     "</td>";  
                                        echo  "</tr>";
@@ -320,17 +321,17 @@
                                  ?>                                  
                               </tbody>
                            </table>       
-                              <button type="submit" name="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all" style="width: 66.74px" onclick="return confirm('Are you sure want to save this data?');">
+                              <button type="submit" name="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all w-auto" style="width: 66.74px" onclick="return confirm('Are you sure want to save this data?');">
                                  <span class="far fa-save fa-md"></span> 
                                  <span >&nbsp Save</span>
                               </button>
                            <div class="text-right float-right">
-                              <button type="submit" name="delete_record" class="btn btn-danger mb-2 px-2 py-2 rounded" style="width: 144.54px" onclick="return confirm('Are you sure want to delete selected item(s)?');">
+                              <button type="submit" name="delete_record" class="btn btn-danger mb-2 px-2 py-2 rounded w-auto" style="width: 144.54px" onclick="return confirm('Are you sure want to delete selected item(s)?');">
                                  <span class="far fa-trash fa-lg"></span> &nbsp 
                                  <span id="delete-lable">Delete Selected</span>
                               </button>
                            </div>
-                              <button type="submit" name="cancel" class="btn btn-secondary mb-2 px-2 py-2 rounded toggle-all" style="width: 66.74px" onclick="return confirm('Are you sure want to cancel? Any changes you made will not be saved!')">
+                              <button type="submit" name="cancel" class="btn btn-secondary mb-2 px-2 py-2 rounded toggle-all w-auto" style="width: 66.74px" onclick="return confirm('Are you sure want to cancel? Any changes you made will not be saved!')">
                                  <span class="far fa-arrow-left fa-md"></span>
                                  <span >&nbsp Back</span>
                               </button>

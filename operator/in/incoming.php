@@ -110,7 +110,7 @@ date_default_timezone_set("Asia/Jakarta");
          <div class="topbar">
                <nav class="navbar navbar-expand-lg navbar-light">
                   <div class="full">
-                     <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
+                     <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height: 62px;"><i class="fa fa-bars"></i></button>
                      <div class="logo_section">
                            <a href="../dashboardop.php"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
                      </div>
@@ -123,7 +123,7 @@ date_default_timezone_set("Asia/Jakarta");
                               </ul>
                               <ul class="user_profile_dd">
                                  <li>
-                                       <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/user.png" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
+                                       <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/user.png" alt="#" /><span class="name_user"><?=$_SESSION['nama']?></span></a>
                                        <div class="dropdown-menu">
                                           <a class="dropdown-item" href="../profileop.php">My Profile</a>
                                           <a class="dropdown-item" href="../settingsop.php">Settings</a>

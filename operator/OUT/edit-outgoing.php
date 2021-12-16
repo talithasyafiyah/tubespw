@@ -5,8 +5,10 @@
             // SET PAGE TITLE
             $TITLE = "Edit Outgoing";
 
-            // START SESSION
-            session_start(); 
+            session_start();
+            if(empty($_SESSION['level'])) {
+                echo "<script>alert('Sorry, you are not allowed to access this page.'); document.location='../../pages/login.php'</script>";
+            }
 
             // CHECK SESSION ID EXISTENCE
             if(!isset($_SESSION['id']) || !isset($_SESSION['edit_id']) || !isset($_GET['id']) || !isset($_GET['session_id']) || $_SESSION['id'] != $_GET['id'] || $_SESSION['edit_id'] != $_GET['session_id'])
@@ -61,8 +63,9 @@
                     $DELETE_NOTIFICATION = "DELETE FROM `notification` WHERE link = '$_SESSION[edit_id]'";
                     $DELETE_NOTIFICATION_QUERY = mysqli_query($koneksi, $DELETE_NOTIFICATION);
                     
-                    session_destroy();
-                    session_unset();
+                    unset($_SESSION['edit_id']);
+                    unset($_SESSION['id']);
+
                     header("location: index.php");
                 }
             }
@@ -144,7 +147,7 @@
             </div>
             <div class="row column1">
                 <div class="col-lg-12">
-                    <div class="white_shd full margin_bottom_30 px-2">
+                    <div class="white_shd full margin_bottom_30 px-2" style="background-image: url('../images/layout_img/pattern_h.png');">
                         <div class="row" style="width: 1008.22">
                             <div class="col-lg-5" style="width: 420.09px">
                                 <table class="table table-bordered my-2">
@@ -423,7 +426,8 @@
                                         $DROP_EVENT = "DROP EVENT `$_SESSION[edit_id]`";
                                         $DROP_EVENT_QUERY = mysqli_query($koneksi, $DROP_EVENT);
 
-                                        session_destroy();
+                                        unset($_SESSION['edit_id']);
+                                        unset($_SESSION['id']);
 
                                         echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";
                                     }
@@ -459,7 +463,8 @@
                                         $DROP_EVENT = "DROP EVENT `$_SESSION[edit_id]`";
                                         $DROP_EVENT_QUERY = mysqli_query($koneksi, $DROP_EVENT);
 
-                                        session_destroy();
+                                        unset($_SESSION['edit_id']);
+                                        unset($_SESSION['id']);
 
                                         echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";
                                     }
@@ -474,7 +479,8 @@
                                         $DROP_EVENT = "DROP EVENT `$_SESSION[edit_id]`";
                                         $DROP_EVENT_QUERY = mysqli_query($koneksi, $DROP_EVENT);
 
-                                        session_destroy();
+                                        unset($_SESSION['edit_id']);
+                                        unset($_SESSION['id']);
 
                                         echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";
                                     }
@@ -574,7 +580,8 @@
                                             $DROP_EVENT = "DROP EVENT `$_SESSION[edit_id]`";
                                             $DROP_EVENT_QUERY = mysqli_query($koneksi, $DROP_EVENT);
 
-                                            session_destroy();
+                                            unset($_SESSION['edit_id']);
+                                            unset($_SESSION['id']);
 
                                             echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";
                                         }
@@ -599,7 +606,8 @@
 
                                         echo '<script>alert("This outgoing record has successfully deleted!")</script>';
 
-                                        session_destroy();
+                                        unset($_SESSION['edit_id']);
+                                        unset($_SESSION['id']);
 
                                         echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";                                   
                                     }

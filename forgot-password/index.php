@@ -5,7 +5,7 @@
     require'includes/PHPMailer.php';
     require'includes/SMTP.php';
     // Load Composer's autoloader
-    require'C:\xampp\htdocs\forgot-password\phpmailer\vendor\autoload.php';
+    require'C:\xampp\htdocs\tubespw\forgot-password\phpmailer\vendor\autoload.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
