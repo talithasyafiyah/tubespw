@@ -8,7 +8,7 @@
     $HOST = 'localhost';
     $USER = 'root';
     $PASSWORD = '';
-    $DATABASE_NAME = "passreset";
+    $DATABASE_NAME = "stockbarang";
 
     $CONN = mysqli_connect($HOST, $USER, $PASSWORD, $DATABASE_NAME);
 

@@ -310,9 +310,9 @@
                                        echo     "<td class='text-left align-middle'><input class='w-100' style='border: 0' type='text' value=$DATA[quantity] readonly></td>";
                                        echo     "<td class='text-left'>";
                                        echo           "<input type='hidden' name='date' value='".date('D, j M Y, H:i:s')."'>";
-                                       echo           "<input type='hidden' name='product_id[]' value=$DATA[product_id]>";
+                                       echo           "<input type='text' name='product_id[]' value=$DATA[product_id]>";
                                        echo           "<input type='hidden' name='product_name[]' value='".$DATA['product_name']."'>";
-                                       echo           "<input type='hidden' name='temp_quantity[]' value=$DATA[quantity]>";
+                                       echo           "<input type='text' name='temp_quantity[]' value=$DATA[quantity]>";
                                        echo           "<input type='checkbox' name='check_product[]' value=$DATA[session_id] class='form-check-input mx-0 my-0' style='right: 70.775px; width: 20px; height: 20px'>";
                                        echo     "</td>";  
                                        echo  "</tr>";
@@ -397,27 +397,36 @@
                               { 
                                  if(isset($_POST['date']))
                                  {
-                                    // COUNT NUMBER OF CHECKBOXES CHECKED
-                                    $CHECKBOXES = count($_POST['check_product']);
-                                    $TEMP_PRODUCT_ID = $_POST['product_id'];
-                                    $TEMP_QUANTITY = $_POST['temp_quantity'];
-
-                                    for ($I = 0; $I < $CHECKBOXES; $I++)
+                                    if(isset($_POST['check_product']))
                                     {
-                                       $RECORD_TO_DELETE = $_POST['check_product'][$I];
-                                       $DELETE_TEMP = "DELETE FROM `$_SESSION[add_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
-                                       $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
+                                       // COUNT NUMBER OF CHECKBOXES CHECKED
+                                       $SELECTOR = $_POST['check_product'];
+                                       $CHECKBOXES = count($SELECTOR);
+                                       $TEMP_PRODUCT_ID = $_POST['product_id'];
+                                       $TEMP_QUANTITY = $_POST['temp_quantity'];
 
-                                       $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
-                                       $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
+                                       for ($I = 0; $I < $CHECKBOXES; $I++)
+                                       {
+                                          $RECORD_TO_DELETE = $SELECTOR[$I];
+                                          $INDEX_INCREMENT = $SELECTOR[$I] - 1;
+                                          $DELETE_TEMP = "DELETE FROM `$_SESSION[add_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
+                                          $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
 
-                                       $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
-                                       $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
-                                       
-                                       $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_barang ='$TEMP_PRODUCT_ID[$I]'";
-                                       $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
+                                          $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID[$INDEX_INCREMENT]' LIMIT 1";
+                                          $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
+
+                                          $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
+                                          $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
+                                          
+                                          $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$INDEX_INCREMENT] WHERE id_barang ='$TEMP_PRODUCT_ID[$INDEX_INCREMENT]'";
+                                          $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
+                                       }
+                                       echo "<script>setTimeout(\"location.href = 'add-outgoing.php?session_id=$_SESSION[add_id]';\");</script>";
                                     }
-                                    echo "<script>setTimeout(\"location.href = 'add-outgoing.php?session_id=$_SESSION[add_id]';\");</script>";
+                                    else
+                                    {
+                                       echo '<script>alert("Please check at least one checkbox!")</script>';
+                                    }
                                  }
                                  else
                                  {

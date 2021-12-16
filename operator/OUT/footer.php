@@ -122,6 +122,7 @@
             $('input:checkbox').prop('checked', checked);
          });
 
+         // CODE TO MAKE LIVE TIME 
          var timestamp = document.getElementById('timestamp');
          var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
          var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -157,6 +158,23 @@
          }
 
          setInterval(time, 1000);
+
+         // TO VALIDATE SAVE BUTTON EITHER THERE ARE ITEMS LEFT OR NOT
+         $(document).ready(function() 
+         {
+            $('#save').click(function() 
+            {
+               var checkboxes = $('input[type="checkbox"]').length;
+               if (checkboxes != 1)
+               {
+                  return confirm('Are you sure want to save this data?');
+               }
+               else
+               {
+                  return confirm('Are you sure want to delete this outgoing record?')
+               }
+            })
+         });
       </script>
    </body>
 </html>

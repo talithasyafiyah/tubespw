@@ -8,9 +8,6 @@
             // START SESSION
             session_start(); 
 
-            // SET CHANGE
-            $_SESSION['status'] = "";
-
             // CHECK SESSION ID EXISTENCE
             if(!isset($_SESSION['id']) || !isset($_SESSION['edit_id']) || !isset($_GET['id']) || !isset($_GET['session_id']) || $_SESSION['id'] != $_GET['id'] || $_SESSION['edit_id'] != $_GET['session_id'])
             {
@@ -95,8 +92,7 @@
                         $INDEX_NAMA_BARANG++;
                         $INDEX_QUANTITY++;
                     }
-                    $INSERT_DEFAULT = "INSERT INTO `$_GET[id]` (product_id, product_name, quantity) VALUES ('$ROW_DEFAULT[product_id]', '$ROW_DEFAULT[product_name]', '$ROW_DEFAULT[quantity]')";
-                    $INSERT_DEFAULT_QUERY = mysqli_query($koneksi, $INSERT_DEFAULT);
+
 
                 $_SESSION['limiter']++;      
                 }                  
@@ -174,7 +170,7 @@
                                                     {
                                                         while ($ROW = $SELECT_TABLE_QUERY -> fetch_assoc()) // HERE $ROW IS ARRAY
                                                         {
-                                                        echo "<option value=".$ROW['id_produk'].">" . $ROW['brand'] . ' ' . $ROW['harga'] . '(pcs)' ."</option>"; 
+                                                        echo "<option value=".$ROW['id_barang'].">" . $ROW['produk'] . ' ' . $ROW['harga'] . '(pcs)' ."</option>"; 
                                                         }
                                                     }
                                                 ?>
@@ -198,25 +194,25 @@
                                                         }
                                                         else
                                                         {
-                                                        $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_produk = '$TEMP_PRODUCT_ID' LIMIT 1";
+                                                        $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID' LIMIT 1";
                                                         $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
                     
                                                         if (mysqli_num_rows($SELECT_TABLE_QUERY) > 0)
                                                         {
                                                             $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
                                                             $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';
-                                                            $PRODUCT_BRAND = isset($ROW['brand']) ? $ROW['brand'] : '';
+                                                            $PRODUCT_BRAND = isset($ROW['produk']) ? $ROW['produk'] : '';
                     
                                                             if ($TEMP_QUANTITY > $STOCK_AVAILABLE === false)
                                                             {
                                                                 $STATUS['success'] = "Item successfully added!";
-                                                                $REDUCE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE - $TEMP_QUANTITY WHERE id_produk ='$TEMP_PRODUCT_ID'";
+                                                                $REDUCE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE - $TEMP_QUANTITY WHERE id_barang ='$TEMP_PRODUCT_ID'";
                                                                 $REDUCE_STOCK_QUERY = mysqli_query($koneksi, $REDUCE_STOCK);  
                                                                 
                                                                 $INSERT_DATA = "INSERT INTO `$_SESSION[edit_id]` (product_id, product_name, quantity, `status`) VALUES ('$TEMP_PRODUCT_ID', '$PRODUCT_BRAND', '$TEMP_QUANTITY', 'new item')";
                                                                 $INSERT_DATA_QUERY = mysqli_query($koneksi, $INSERT_DATA);
 
-                                                                $_SESSION['status'] = "Added New Item";
+                                                                $_SESSION['added'] = "Added New Item";
                                                             }
                                                             else
                                                             {
@@ -376,7 +372,7 @@
                                     ?>                                                
                                 </tbody>
                                 </table>       
-                                <button type="submit" name="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all" style="width: 66.74px" onclick="return confirm('Are you sure want to save this data?');">
+                                <button type="submit" name="save" id="save" class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded toggle-all" style="width: 66.74px">
                                     <span class="far fa-save fa-md"></span> 
                                     <span >&nbsp Save</span>
                                 </button>
@@ -395,7 +391,7 @@
                                 // CANCEL
                                 if (isset($_POST['cancel']))
                                 {  
-                                    if($_SESSION['status'] == "Added New Item")
+                                    if(isset($_SESSION['added']))
                                     {
                                         // COUNT NUMBER OF CHECKBOXES CHECKED
                                         $CHECKBOXES = count($_POST['check_product']);
@@ -408,13 +404,13 @@
                                             $DELETE_TEMP = "DELETE FROM `$_SESSION[edit_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
                                             $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
 
-                                            $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_produk = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
+                                            $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
                                             $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
 
                                             $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
                                             $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
                                             
-                                            $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_produk ='$TEMP_PRODUCT_ID[$I]'";
+                                            $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_barang ='$TEMP_PRODUCT_ID[$I]'";
                                             $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
                                         }
 
@@ -431,7 +427,7 @@
 
                                         echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";
                                     }
-                                    else if($_SESSION['status'] == "Deleted Some Items")
+                                    else if(isset($_SESSION['deleted']))
                                     {
                                         // COUNT NUMBER OF CHECKBOXES CHECKED
                                         $CHECKBOXES = count($_POST['check_product']);
@@ -444,13 +440,13 @@
                                             $DELETE_TEMP = "DELETE FROM `$_SESSION[edit_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
                                             $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
 
-                                            $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_produk = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
+                                            $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
                                             $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
 
                                             $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
                                             $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
                                             
-                                            $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_produk ='$TEMP_PRODUCT_ID[$I]'";
+                                            $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_barang ='$TEMP_PRODUCT_ID[$I]'";
                                             $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
                                         }
 
@@ -489,27 +485,38 @@
                                 { 
                                     if(isset($_POST['date']))
                                     {
-                                        // COUNT NUMBER OF CHECKBOXES CHECKED
-                                        $CHECKBOXES = count($_POST['check_product']);
-                                        $TEMP_PRODUCT_ID = $_POST['product_id'];
-                                        $TEMP_QUANTITY = $_POST['temp_quantity'];
-
-                                        for ($I = 0; $I < $CHECKBOXES; $I++)
+                                        if(isset($_POST['check_product']))
                                         {
-                                            $RECORD_TO_DELETE = $_POST['check_product'][$I];
-                                            $DELETE_TEMP = "DELETE FROM `$_SESSION[edit_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
-                                            $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
+                                            // COUNT NUMBER OF CHECKBOXES CHECKED
+                                            $SELECTOR = $_POST['check_product'];
+                                            $CHECKBOXES = count($SELECTOR);
+                                            $TEMP_PRODUCT_ID = $_POST['product_id'];
+                                            $TEMP_QUANTITY = $_POST['temp_quantity'];
 
-                                            $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_produk = '$TEMP_PRODUCT_ID[$I]' LIMIT 1";
-                                            $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
+                                            for ($I = 0; $I < $CHECKBOXES; $I++)
+                                            {
+                                                $RECORD_TO_DELETE = $SELECTOR[$I];
+                                                $INDEX_INCREMENT = $SELECTOR[$I] - 1;
+                                                $DELETE_TEMP = "DELETE FROM `$_SESSION[edit_id]` WHERE `session_id` = '$RECORD_TO_DELETE'";
+                                                $DELETE_TEMP_QUERY = mysqli_query($koneksi, $DELETE_TEMP);
 
-                                            $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
-                                            $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
-                                            
-                                            $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$I] WHERE id_produk ='$TEMP_PRODUCT_ID[$I]'";
-                                            $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
+                                                $SELECT_TABLE = "SELECT * FROM data_produk WHERE id_barang = '$TEMP_PRODUCT_ID[$INDEX_INCREMENT]' LIMIT 1";
+                                                $SELECT_TABLE_QUERY = mysqli_query($koneksi, $SELECT_TABLE);
+
+                                                $ROW = mysqli_fetch_array($SELECT_TABLE_QUERY);
+                                                $STOCK_AVAILABLE = isset($ROW['stok']) ? $ROW['stok'] : '';                
+                                                
+                                                $RESTORE_STOCK = "UPDATE data_produk SET stok = $STOCK_AVAILABLE + $TEMP_QUANTITY[$INDEX_INCREMENT] WHERE id_barang ='$TEMP_PRODUCT_ID[$INDEX_INCREMENT]'";
+                                                $RESTORE_STOCK_QUERY = mysqli_query($koneksi, $RESTORE_STOCK);
+                                            }
+                                            $_SESSION['deleted'] = "Deleted Some Items";
+
+                                            echo "<script>setTimeout(\"location.href = 'edit-outgoing.php?id=$_GET[id]&session_id=$_SESSION[edit_id]';\");</script>";
                                         }
-                                        echo "<script>setTimeout(\"location.href = 'edit-outgoing.php?id=$_SESSION[id]&session_id=$_SESSION[edit_id]';\");</script>";
+                                        else
+                                        {
+                                            echo '<script>alert("Please check at least one checkbox!")</script>';
+                                        }
                                     }
                                     else
                                     {
@@ -578,7 +585,23 @@
                                     }
                                     else
                                     {
-                                        echo '<script>alert("There is no data to save!")</script>';                                   
+                                        $DELETE_DATA = "DELETE FROM `outgoing` WHERE `user_id` = '$_GET[id]'";
+                                        $DELETE_DATA_QUERY = mysqli_query($koneksi, $DELETE_DATA);
+
+                                        $DELETE_TABLE = "DROP TABLE `$_SESSION[edit_id]`, `$_GET[id]`";
+                                        $DELETE_TABLE_QUERY = mysqli_query($koneksi, $DELETE_TABLE);
+
+                                        $DELETE_NOTIFICATION = "DELETE FROM `notification` WHERE link = '$_SESSION[edit_id]'";
+                                        $DELETE_NOTIFICATION_QUERY = mysqli_query($koneksi, $DELETE_NOTIFICATION);
+
+                                        $DROP_EVENT = "DROP EVENT `$_SESSION[edit_id]`";
+                                        $DROP_EVENT_QUERY = mysqli_query($koneksi, $DROP_EVENT);
+
+                                        echo '<script>alert("This outgoing record has successfully deleted!")</script>';
+
+                                        session_destroy();
+
+                                        echo "<script>setTimeout(\"location.href = 'index.php';\");</script>";                                   
                                     }
                                 }
                                 ?>                          
