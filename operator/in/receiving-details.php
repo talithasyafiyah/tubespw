@@ -21,12 +21,12 @@ while($data = mysqli_fetch_array($sql)){
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Dashboard Operator</title>
+      <title>Receiving Details</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="../images/fevicon.png" type="image/png" />
+      <link rel="icon" href="../../images/logo/LOGO 1.9.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="../css/bootstrap.min.css" />
       <!-- CSS only -->
@@ -69,7 +69,7 @@ while($data = mysqli_fetch_array($sql)){
             <div class="sidebar_blog_1">
                 <div class="sidebar-header">
                     <div class="logo_section">
-                        <a href="operator.html"><img class="logo_icon img-responsive" style="width: auto;" src="../../operator/images/logo/status.png" alt="#" /></a>
+                        <a href="../dashboardop.php"><img class="logo_icon img-responsive" style="width: auto;" src="../../operator/images/logo/status.png" alt="#" /></a>
                     </div>
                 </div>
                 <div class="sidebar_user_info">
@@ -86,7 +86,7 @@ while($data = mysqli_fetch_array($sql)){
             <div class="sidebar_blog_2">
                 <h4>General</h4>
                 <ul class="list-unstyled components">
-                     <li><a href="dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                     <li><a href="../dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
                      <li>
                         <a href="#dataproduct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes purple_color"></i> <span>Data Product</span></a>
                         <ul class="collapse list-unstyled" id="dataproduct">
@@ -116,7 +116,7 @@ while($data = mysqli_fetch_array($sql)){
                   <div class="full">
                      <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
                      <div class="logo_section">
-                           <a href="operator.html"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
+                           <a href="../dashboardop.php"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
                      </div>
                      <div class="right_topbar">
                            <div class="icon_info">

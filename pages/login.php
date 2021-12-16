@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link rel="icon" href="images/logo/LOGO 1.9.png" type="image/png" />
+
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +26,7 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
-								<img src="images/logo.png" width="130">
+								<a href="tubespw/"><img src="images/logo.png" width="130"></a>
 								<h2>Welcome</h2>
 								<p>Do not have an <b style="color: #ff6a3d;">account?</b></p>
 								<a href="register.php" class="btn btn-white btn-outline-white">Sign Up</a>

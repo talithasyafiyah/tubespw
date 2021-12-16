@@ -19,7 +19,7 @@ session_start();
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <link rel="icon" href="images/logo/LOGO 1.9.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- site css -->
@@ -34,12 +34,11 @@ session_start();
       <link rel="stylesheet" href="css/perfect-scrollbar.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
       <!-- Google font -->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
-      <!-- Bootstrap -->
-      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">  -->
       <!-- Custom stlylesheet -->
       <link type="text/css" rel="stylesheet" href="css/insert.css" />
       <!-- CK Editor -->
@@ -57,7 +56,7 @@ session_start();
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="visitor.html"><img class="logo_icon img-responsive" style="width: auto;" src="images/logo/status.png" alt="#" /></a>
+                        <a href="dashboardvis.php"><img class="logo_icon img-responsive" style="width: auto;" src="images/logo/status.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -90,7 +89,7 @@ session_start();
                      <div class="full">
                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
                         <div class="logo_section">
-                           <a href="visitor.html"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
+                           <a href="dashboardvis.php"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
                         </div>
                         <div class="right_topbar">
                            <div class="icon_info">
@@ -136,9 +135,9 @@ session_start();
                                     <h2>Testimoni</h2>
                                  </div>
                               </div>
-                              <div class="contain">
+                              <div class="contain mx-5 mt-3">
                                  <div class="section-center">
-                                       <div class="container">
+                                       <!-- <div class="container"> -->
                                           <div class="row">
                                              <div class="booking-form mx-auto">
                                                 <form method="POST">
@@ -191,7 +190,7 @@ session_start();
                                                 </form>
                                              </div>
                                           </div>
-                                       </div>
+                                       
                                  </div>
                               </div>
                            </div>

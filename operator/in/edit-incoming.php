@@ -23,12 +23,12 @@ session_start();
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Dashboard Operator</title>
+      <title>Edit Incoming</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="../images/fevicon.png" type="image/png" />
+      <link rel="icon" href="../../images/logo/LOGO 1.9.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="../css/bootstrap.min.css" />
       <!-- CSS only -->
@@ -71,7 +71,7 @@ session_start();
             <div class="sidebar_blog_1">
                 <div class="sidebar-header">
                     <div class="logo_section">
-                        <a href="operator.html"><img class="logo_icon img-responsive" style="width: auto;" src="../../operator/images/logo/status.png" alt="#" /></a>
+                        <a href="../dashboardop.php"><img class="logo_icon img-responsive" style="width: auto;" src="../../operator/images/logo/status.png" alt="#" /></a>
                     </div>
                 </div>
                 <div class="sidebar_user_info">
@@ -88,7 +88,7 @@ session_start();
             <div class="sidebar_blog_2">
                 <h4>General</h4>
                 <ul class="list-unstyled components">
-                     <li><a href="dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                     <li><a href="../dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
                      <li>
                         <a href="#dataproduct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes purple_color"></i> <span>Data Product</span></a>
                         <ul class="collapse list-unstyled" id="dataproduct">
@@ -118,7 +118,7 @@ session_start();
                   <div class="full">
                      <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
                      <div class="logo_section">
-                           <a href="operator.html"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
+                           <a href="../dashboardop.php"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
                      </div>
                      <div class="right_topbar">
                            <div class="icon_info">
@@ -155,7 +155,7 @@ session_start();
                            <div class="row">
                               <div class="col-xs-3 col-sm-4 col-md-6 col-lg-7 align-self-center">
                                  <h2>
-                                    <i class="fa fa-plus-square fa-md orange_color"></i> 
+                                    <i class="fa fa-edit fa-md orange_color"></i> 
                                     &nbsp Edit receiving &nbsp;&nbsp
                                     <small>
                                     <i class="fa fa-angle-double-right fa-xs"></i>

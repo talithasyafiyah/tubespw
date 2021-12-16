@@ -18,15 +18,16 @@ session_start();
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+      <title>Master Data Product</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <link rel="icon" href="images/logo/LOGO 1.9.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- CSS only -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
       <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
       <!-- site css -->
       <link rel="stylesheet" href="style.css" />
@@ -43,9 +44,9 @@ session_start();
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
       <!-- Google font -->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+      <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">  -->
       <!-- Bootstrap -->
-      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" /> -->
       <!-- Custom stlylesheet -->
       <link type="text/css" rel="stylesheet" href="css/insert.css" />
       <!--[if lt IE 9]>
@@ -65,7 +66,7 @@ session_start();
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="operator.html"><img class="logo_icon img-responsive" style="width: auto;" src="images/logo/status.png" alt="#" /></a>
+                        <a href="dashboardop.php"><img class="logo_icon img-responsive" style="width: auto;" src="images/logo/status.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -113,7 +114,7 @@ session_start();
                      <div class="full">
                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
                         <div class="logo_section">
-                           <a href="operator.php"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
+                           <a href="dashboardop.php"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
                         </div>
                         <div class="right_topbar">
                            <div class="icon_info">
@@ -212,9 +213,9 @@ session_start();
                                         </td>
                                       </tr>
                                       <!-- Preview Modal -->
-                                      <div class="modal fade" id="view<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+                                       <div class="modal fade" id="view<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png');">
+                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png'); background-color: white;">
                                                 <div class="modal-header">
                                                    <h5 class="modal-title">Preview Product</h5>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -226,7 +227,7 @@ session_start();
                                                    <div class="form-group">
                                                    <label for="Gambar" class="col-form-label">Gambar :</label>
                                                    <br>
-                                                   <img src="gambar/<?php echo $data['gambar'];?>" width="200px">
+                                                   <img src="../operator/gambar/<?php echo $data['gambar'];?>" width="200px">
                                                    </div>
                                                    <div class="form-group">
                                                    <label for="id_barang" class="col-form-label">ID Barang :</label>
@@ -262,9 +263,9 @@ session_start();
                                           </div>
                                        </div>
                                       <!-- Update Modal -->
-                                      <div class="modal fade" id="update<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+                                      <div class="modal fade" id="update<?=$id_barang;?>" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png');">
+                                             <div class="modal-content"  style="background-image: url('images/layout_img/pattern.png'); background-color: #fff;">
                                                 <div class="modal-header">
                                                    <h5 class="modal-title">Update Product</h5>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
