@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2021 at 10:05 AM
+-- Generation Time: Dec 17, 2021 at 04:02 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `passreset`
+-- Database: `stockbarang`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,7 @@ CREATE TABLE `password_reset` (
 INSERT INTO `password_reset` (`id`, `username`, `password`, `email`, `session_token`, `token_expiration`) VALUES
 (1, 'caesto', '$2y$10$KMMFEFsztpePLlAlZ/Kj8urMenwmxBlnhtGD5UWEYourh0amFRz6m', 'marcocaesto@gmail.com', '', ''),
 (2, 'talitha', 'user102', 'talithasyafiyah1112@gmail.com', '85fc6a3f2b863552640b8849e5911b98', 'November 22, 2021, 20:33 PM'),
-(3, 'donny', 'user103', 'donny.adithyaciok@gmail.com', 'e1b9f493a2c9e232009e5ab7bf645d83', 'November 22, 2021, 20:34 PM'),
+(3, 'donny', '$2y$10$ESHUoLizW/OQsp7iAGLp.uQYDu/a9TC1ZB4mgZ.9WFvl/J6Din6Xm', 'donny.adithyaciok@gmail.com', '', ''),
 (4, 'febri', 'user104', 'febrizuladhari12345@gmail.com', '8531f428e447b24de9851e92e6b06770', ''),
 (5, 'erli', 'user105', 'erligurning03@gmail.com', 'be87900eb0902ceb2eee57c8ca66e88c', ''),
 (6, 'abrar', 'user106', 'rayhanabrar4@gmail.com', '877a78fbb318e89856c621e8b6bbdd55', '');
