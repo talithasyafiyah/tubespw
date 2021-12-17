@@ -157,7 +157,7 @@ include "../includes/koneksi.php";
                                         <?php 
                                             include "../includes/koneksi.php";
                                             $id = $_POST['id'];
-                                            $query = "SELECT * FROM kalendar_manager";
+                                            $query = "SELECT * FROM kalendar_manager WHERE id='$_POST[id]'";
                                             $hasil = mysqli_query($koneksi, $query);
 
                                             
