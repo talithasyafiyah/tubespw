@@ -5,7 +5,7 @@
     require'includes/PHPMailer.php';
     require'includes/SMTP.php';
     // Load Composer's autoloader
-    require'C:\xampp\htdocs\tubespw\forgot-password\phpmailer\vendor\autoload.php';
+    require'C:\xampp\htdocs\tubespw\sourceCode\forgot-password\phpmailer\vendor\autoload.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -65,7 +65,7 @@
         $mail->isHTML(true);
         $mail->Subject = "Reset Password Notification";
 
-        $mail_template = file_get_contents('C:\xampp\htdocs\tubespw\forgot-password\email-template.html');
+        $mail_template = file_get_contents('C:\xampp\htdocs\tubespw\sourceCode\forgot-password\email-template.html');
         $mail_template = str_replace('{{USERNAME}}', $USER_NAME, $mail_template);
         $mail_template = str_replace("{{USEREMAIL}}", $USER_EMAIL, $mail_template);
         $mail_template = str_replace("{{TOKEN}}", $TOKEN, $mail_template);
@@ -228,7 +228,7 @@
                 </div>
             </section>
             <div class="mx-5 py-3">
-                <button class="btn btn-primary btn-lg rounded" onclick="location.href='/tubespw/pages/login.php'">
+                <button class="btn btn-primary btn-lg rounded" onclick="location.href='/tubespw/sourceCode/pages/login.php'">
                     Go Back
                 </button>
             </div>

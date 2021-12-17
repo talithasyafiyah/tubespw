@@ -80,7 +80,7 @@
                         if($DELETE_TOKEN_QUERY)
                         {
                             $STATUS['success'] = "Your password has successfully changed";
-                            header("refresh:2; url=http://localhost/tubespw/pages/login.php");
+                            header("refresh:2; url=http://localhost/tubespw/sourceCode/pages/login.php");
                         }
                     }
                     else
