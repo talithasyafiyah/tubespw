@@ -9,7 +9,7 @@
 		$cpass = $_POST['cpassword'];
 		$password = password_hash($pass, PASSWORD_BCRYPT);
 		$cpassword = password_hash($cpass, PASSWORD_BCRYPT);
-		$level = 'Pengunjung';
+		$level = 'Visitor';
 		$usernamecheck = (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'")));
 		$msg = "";
 
@@ -26,7 +26,7 @@
 		} elseif ($usernamecheck > 0) {
 			header("location:register.php?pesan=check");
 		} else {
-			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Visitor')";
+			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','$level')";
 																			
 			if($koneksi->query($sql)===TRUE){
 				header("location:login.php?pesan=berhasil");
